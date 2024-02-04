@@ -1,0 +1,10 @@
+import com.baseapp.BaseApp.model.PersonModel;
+
+dialect "mvel"
+
+rule "Get Employment Percentage"
+    when
+        person: PersonModel(point > 50)
+    then
+        person.setPercentageOfEmployment(55.0)
+end
