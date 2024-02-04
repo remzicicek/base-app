@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.*;
 public interface PersonRestController {
 
     @PostMapping("/add")
-    ResponseEntity<PersonModel> save(@Valid @NotNull @RequestBody PersonModel person);
+    ResponseEntity<PersonModel> save(@Valid @NotNull @RequestBody PersonModel model);
 
     @GetMapping("/getPerson/{id}")
     ResponseEntity<PersonModel> getById(@Valid @NotNull @PathVariable Long id);
 
     @DeleteMapping("delete/{id}")
     ResponseEntity<?> deleteById(@Valid @NotNull @PathVariable Long id);
+
+    @PostMapping("/runRules")
+    ResponseEntity<PersonModel> runRules(@Valid @NotNull @RequestBody PersonModel model);
+
 }

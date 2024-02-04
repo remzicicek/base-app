@@ -21,8 +21,8 @@ public class PersonRestControllerImpl implements PersonRestController {
     }
 
     @Override
-    public ResponseEntity<PersonModel> save(@Valid @NotNull PersonModel person) {
-        PersonModel newPerson = personService.save(person);
+    public ResponseEntity<PersonModel> save(@Valid @NotNull PersonModel model) {
+        PersonModel newPerson = personService.save(model);
         return new ResponseEntity<>(newPerson, HttpStatus.CREATED);
     }
 
@@ -36,5 +36,10 @@ public class PersonRestControllerImpl implements PersonRestController {
     public ResponseEntity<?> deleteById(@Valid @NotNull Long id) {
         personService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<PersonModel> runRules(PersonModel model) {
+        return new ResponseEntity<>(personService.runRules(model), HttpStatus.OK);
     }
 }
