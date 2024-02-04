@@ -48,6 +48,14 @@ dependencies {
 	/* POSTGRESQL */
 	// https://mvnrepository.com/artifact/org.postgresql/postgresql
 	implementation group: 'org.postgresql', name: 'postgresql', version: '42.7.1'
+
+	/* DROOLS */
+	// https://mvnrepository.com/artifact/org.drools/drools-mvel
+	implementation group: 'org.drools', name: 'drools-mvel', version: '9.44.0.Final'
+	// https://mvnrepository.com/artifact/org.drools/drools-core
+	implementation group: 'org.drools', name: 'drools-core', version: '9.44.0.Final'
+	// https://mvnrepository.com/artifact/org.drools/drools-compiler
+	implementation group: 'org.drools', name: 'drools-compiler', version: '9.44.0.Final'
 }
 
 tasks.named('test') {
